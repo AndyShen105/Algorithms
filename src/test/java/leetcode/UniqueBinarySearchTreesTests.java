@@ -17,5 +17,11 @@ public class UniqueBinarySearchTreesTests {
         log.info(UniqueBinarySearchTrees.numTrees(3));
         assert UniqueBinarySearchTrees.numTrees(3) == 5;
     }
+
+    @Test
+    public void uniqueBinarySearchTreesTest2() {
+        int n = 3;
+        log.info(UniqueBinarySearchTreesII.generateTrees(4));
+    }
 }
 
