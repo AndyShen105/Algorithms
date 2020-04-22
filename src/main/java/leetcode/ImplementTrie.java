@@ -65,7 +65,7 @@ public class ImplementTrie {
             }
             return node.isLeaf;
         }
-        
+
         public boolean startsWith(String prefix) {
             if (prefix == null || prefix.length() == 0) {
                 return false;
@@ -85,5 +85,6 @@ public class ImplementTrie {
             return true;
         }
     }
+
 }
 
