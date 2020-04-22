@@ -86,20 +86,5 @@ public class ImplementTrie {
         }
     }
 
-    public static int bits2words(int numBits) {
-        return ((numBits - 1) >> 6) + 1; // I.e.: get the word-offset of the last bit and add one (make sure to use >> so 0 returns 0!)
-    }
-
-
-    public static void main(String[] args) {
-        log.info(bits2words(65));
-        int numBits = 300;
-        long[] bits = new long[bits2words(numBits)];
-        int index = 330;
-        int wordNum = index >> 6;      // div 64
-        long bitmask = 1L << index;
-        bits[wordNum] |= bitmask;
-    }
-
 }
 
