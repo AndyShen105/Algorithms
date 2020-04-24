@@ -15,5 +15,10 @@ public class PascalTriangleTests {
     public void PascalTriangleTest1() {
         log.info(PascalTriangle.generate(5));
     }
+
+    @Test
+    public void PascalTriangleTest2() {
+        log.info(PascalriangleII.generate(3));
+    }
 }
 
