@@ -18,23 +18,15 @@ public class BinaryTreeInorderTraversal {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        TreeNode temp;
-        int size = 0;
-        while (!stack.empty()) {
-            temp = stack.peek();
-
-            while (temp.left != null && size < 0        ) {
-                stack.push(temp.left);
-                temp = temp.left;
-                size++;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
             }
-            temp = stack.pop();
-            size--;
-            log.info(temp.val);
-            result.add(temp.val);
-            if (temp.right != null) {
-                stack.push(temp.right);
+            if (!stack.isEmpty()) {
+                root = stack.pop();
+                result.add(root.val);
+                root = root.right;
             }
         }
         return result;
