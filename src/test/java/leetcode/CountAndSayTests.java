@@ -27,8 +27,13 @@ public class CountAndSayTests {
     }
 
     @Test
-    public void countAndSayTest5() {
+    public void countAndSayTest4() {
         log.info(CountAndSay.countAndSay(4));
+    }
+
+    @Test
+    public void countAndSayTest5() {
+        log.info(CountAndSay.countAndSay(5));
     }
 
 }
