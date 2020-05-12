@@ -1,8 +1,4 @@
 package leetcode;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +6,6 @@ import java.util.List;
  * Created by hang.shen@transwarp.io on 2020/5/11.
  */
 public class Combinations {
-
-    private static final Logger log = LogManager.getLogger(Combinations.class);
 
     public static List<List<Integer>> result = new ArrayList<>();
 

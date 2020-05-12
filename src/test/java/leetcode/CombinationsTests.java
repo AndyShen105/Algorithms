@@ -15,7 +15,6 @@ public class CombinationsTests {
 
     @Test
     public void test1() {
-        int n = 4, k = 2;
         Combinations combinations = new Combinations();
         List<List<Integer>> list = combinations.combine(4, 2);
         log.info(list);
