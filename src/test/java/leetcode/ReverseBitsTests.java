@@ -18,7 +18,7 @@ public class ReverseBitsTests {
 
     @Test
     public void test2() {
-        int i = 1;
+        int i = Integer.MAX_VALUE;
         i = (i << 1)  ;
         log.info(i);
     }
