@@ -3,8 +3,8 @@ package leetcode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
 import java.util.Comparator;
-import java.util.PriorityQueue;
 
 /**
  * Created by hang.shen@transwarp.io on 2020-05-06.
@@ -13,24 +13,24 @@ public class LargestNumber {
     private static final Logger log = LogManager.getLogger(LargestNumber.class);
 
     public String largestNumber(int[] nums) {
-        PriorityQueue<String> queue = new PriorityQueue<>();
-        for (int i : nums) {
-            queue.add(String.valueOf(i));
+        String[] strs = new String[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            strs[i] = String.valueOf(nums[i]);
         }
-
-        String re = "", temp = queue.poll(), current;
-        boolean flag = false || !temp.equals("0");
-        while (!queue.isEmpty()) {
-            current = queue.poll();
-            flag = flag || !current.equals("0");
-            if ((temp + current).compareTo(current + temp) > 0) {
-                re = current + re;
-            } else {
-                re = temp + re;
-                temp = current;
+        Comparator comparator = new Comparator<String>() {
+            public int compare(String str1, String str2) {
+                String s1 = str1 + str2;
+                String s2 = str2 + str1;
+                return 0 - s1.compareTo(s2);
             }
+        };
+        Arrays.sort(strs, comparator);
+        if (strs[0].toString().equals("0"))
+            return "0";
+        StringBuilder builder = new StringBuilder();
+        for (String str : strs) {
+            builder.append(str);
         }
-
-        return flag ? (temp + re) : "0";
+        return builder.toString();
     }
 }
