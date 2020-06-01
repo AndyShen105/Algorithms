@@ -19,18 +19,19 @@ public class LinkedListCycle2 {
 
     public static ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) return null;
-        ListNode slow = head, fast = head.next.next;
+        ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
             if (slow.equals(fast)) {
                 ListNode start = head;
-                while (start != slow) {
+                while (!start.equals(slow)) {
                     start = start.next;
                     slow = slow.next;
                 }
                 return start;
             }
-            slow = slow.next;
-            fast = fast.next.next;
+
         }
         return null;
     }

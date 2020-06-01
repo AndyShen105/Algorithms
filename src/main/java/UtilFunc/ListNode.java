@@ -4,6 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import section1.LinkedList;
 
+import java.util.Objects;
+
 /**
  * Created by hang.shen@transwarp.io on 19-9-25.
  */
@@ -40,6 +42,19 @@ public class ListNode {
             temp = temp.next;
         }
         log.info(info);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ListNode)) return false;
+        ListNode listNode = (ListNode) o;
+        return val == listNode.val;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(val);
     }
 }
 
