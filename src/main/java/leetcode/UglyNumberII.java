@@ -6,7 +6,8 @@ import org.apache.logging.log4j.Logger;
 /**
  * Created by hang.shen@transwarp.io on 2020/4/15.
  */
-public class UglyNumberII {
+public class
+UglyNumberII {
 
     private static final Logger log = LogManager.getLogger(UglyNumberII.class);
 
