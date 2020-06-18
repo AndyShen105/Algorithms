@@ -13,19 +13,18 @@ public class LengthofLastWord {
     public static int lengthOfLastWord(String s) {
 
         char[] ch = s.toCharArray();
-        int count = 0;
-        for (int i = ch.length - 1; i >= 0; i--) {
-            if (ch[i] == ' ') {
-                return count;
-            } else {
-                count++;
-            }
+        if (ch.length == 0) return 0;
+        int index = ch.length - 1, count = 0;
+        while (index >= 0 && ch[index] == ' ') index--;
+        while (index >= 0 && ch[index] != ' ') {
+            count++;
+            index--;
         }
         return count;
     }
 
     public static void main(String[] args) {
-        String s = "a";
+        String s = " ";
         log.info(lengthOfLastWord(s));
     }
 }
