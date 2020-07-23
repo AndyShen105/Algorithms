@@ -15,7 +15,7 @@ public class NextPermutationTests {
     public void test1() {
         int[] array = {1, 2, 3, 4};
         NextPermutation nextPermutation = new NextPermutation();
-        nextPermutation.nextPermutation(array);
+        //nextPermutation.nextPermutation(array);
         log.info(array);
     }
 
@@ -23,7 +23,7 @@ public class NextPermutationTests {
     public void test2() {
         int[] array = {4, 3, 2, 1};
         NextPermutation nextPermutation = new NextPermutation();
-        nextPermutation.nextPermutation(array);
+        //nextPermutation.nextPermutation(array);
         log.info(array);
     }
 
@@ -31,7 +31,7 @@ public class NextPermutationTests {
     public void test3() {
         int[] array = {1, 3, 2};
         NextPermutation nextPermutation = new NextPermutation();
-        nextPermutation.nextPermutation(array);
+        //nextPermutation.nextPermutation(array);
         log.info(array);
     }
 }

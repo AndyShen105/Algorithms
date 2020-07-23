@@ -10,9 +10,8 @@ public class NextPermutation {
 
     private static final Logger log = LogManager.getLogger(NextPermutation.class);
 
-    /*1. 从后向前遍历找到第一个逆序的数字
-    2. 从该位置向后查找最后一个比他大的数交换
-    3. 按照升序排列当前位置之后的数组字*/
+    /*（1）从数组最后一个元素开始扫描，寻找到nums[i] > nums[i - 1]的第一个i值。
+        （2）如果得到i值大于等于1，说明数组存在下一个排列。*/
     public class Solution {
         public void nextPermutation(int[] nums) {
             int i = nums.length - 2;
